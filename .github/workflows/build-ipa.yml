@@ -24,7 +24,7 @@ jobs:
 
       - name: Build Unsigned App
         run: |
-          WORKSPACE=$(ls ios/*.xcworkspace | head -n 1)
+          WORKSPACE=$(ls -d ios/*.xcworkspace | head -n 1)
           SCHEME=$(basename "$WORKSPACE" .xcworkspace)
           xcodebuild -workspace "$WORKSPACE" \
             -scheme "$SCHEME" \
